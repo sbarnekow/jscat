@@ -1,0 +1,48 @@
+<html>
+<head>
+</head>
+<body>
+
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+<button id="slow">Slower</button>
+<button id="fast">Faster</button>
+
+<img id="cat" src="http://f.cl.ly/items/0W1V3U0t3n1s0d1Q2j0b/cat-walk.gif">
+
+  <script> 
+    var img = document.getElementById('cat')
+
+    var timer;
+    var timerslow;
+    var timerfast;
+
+    img.style.position = 'absolute';
+    img.style.left = '0px';
+    img.style.top = '50px';
+    
+    function moveCat(){
+      img.style.left = (parseInt(img.style.left, 10) + 10) + 'px';
+    }
+
+    document.getElementById('start').onclick = function(){
+      timer = window.setInterval(moveCat, 50);
+    };
+
+    document.getElementById('slow').onclick = function(){
+      timer = window.setInterval(moveCat, 100);
+    };
+
+     document.getElementById('fast').onclick = function(){
+      timer = window.setInterval(moveCat, 25);
+    };
+
+    document.getElementById('stop').onclick = function(){
+      clearInterval(timer);
+      // clearInterval(timerslow);
+      // clearInterval(timerfast);
+    };  
+
+  </script>
+
+</body>
